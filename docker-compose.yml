@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+
+  laravel:
+    build:
+      context: .
+      dockerfile: ${PROJECT_PATH}/Dockerfile
+      args:
+        MOUNT_PATH: ${PROJECT_PATH}/composer.json
+    restart: always
+    tty: true
+    ports:
+      - 8001:8000
+    container_name: ${PROJECT_NAME}
+    volumes:
+      - ${PROJECT_PATH}:/var/www/app
+    profiles:
+      - app
+
+
+
+  mysql:
+    image: mysql
+    restart: always
+    tty: true
+    command: --default_authentication_plugin=caching_sha2_password
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "8083:3306"
+    container_name: mysql-AFB
+    volumes:
+      - ./docker/mysql/.db:/var/lib/mysql
+    profiles:
+      - mysql
+
