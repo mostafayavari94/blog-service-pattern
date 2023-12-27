@@ -6,10 +6,11 @@ use App\Models\Article;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 
+
 class ArticleRepository
 {
 
-    function create(string $title, string $content, User $author): Article
+    public static function create(string $title, string $content, User $author): Article
     {
         return Article::create([
             'title' => $title,
@@ -18,7 +19,7 @@ class ArticleRepository
         ]);
     }
 
-    function update(Article $article, string $title, string $content, User $author) : Article
+    public static function update(Article $article, string $title, string $content, User $author): Article
     {
         $article->title = $title;
         $article->content = $content;
@@ -28,12 +29,12 @@ class ArticleRepository
         return $article;
     }
 
-    function getAll(): Collection
+    public static function getAll(): Collection
     {
         return Article::all();
     }
 
-    function find($id): Collection
+    public static function find($id): Collection
     {
         return Article::find($id);
     }

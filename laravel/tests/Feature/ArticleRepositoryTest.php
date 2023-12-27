@@ -23,14 +23,6 @@ class ArticleRepositoryTest extends TestCase
         ];
     }
 
-
-    function setUp(): void
-    {
-        parent::setUp();
-
-        $this->repository = new ArticleRepository();
-    }
-
     /**
      * article repository test
      * @return void
@@ -40,7 +32,7 @@ class ArticleRepositoryTest extends TestCase
         $fake_article = Article::factory()->make();
         $user = $fake_article->Author;
 
-        $created_article = $this->repository->create($fake_article->title, $fake_article->content, $user);
+        $created_article = ArticleRepository::create($fake_article->title, $fake_article->content, $user);
 
         $this->assertInstanceOf(Article::class, $created_article);
 
@@ -68,7 +60,7 @@ class ArticleRepositoryTest extends TestCase
         $user = User::factory()->create();
 
 
-        $updated_article = $this->repository->update($fake_article, $title, $content, $user);
+        $updated_article = ArticleRepository::update($fake_article, $title, $content, $user);
 
         $this->assertInstanceOf(Article::class, $updated_article);
 
@@ -97,7 +89,7 @@ class ArticleRepositoryTest extends TestCase
     {
         $articles = Article::factory($qty)->create();
 
-        $all_articles = $this->repository->getAll();
+        $all_articles = ArticleRepository::getAll();
 
         assertEquals($qty,$articles->count());
 

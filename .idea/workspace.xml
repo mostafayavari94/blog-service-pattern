@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f8e9f30-dcfc-4d51-8756-23a1e9ab83b2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/app/Http/Requests/ArticleCreateRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/app/Models/Article.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/app/Repositories/ArticleRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/app/Services/ArticleService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/database/factories/ArticleFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/database/migrations/2023_12_26_145713_create_articles_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/tests/Feature/ArticleServiceTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/ArticleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laravel/tests/Feature/ArticleRequestsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Requests/ArticleCreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Requests/ArticleCreateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Repositories/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Repositories/ArticleRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Services/ArticleService.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Services/ArticleService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/ArticleRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Feature/ArticleRepositoryTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/ArticleServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Feature/ArticleServiceTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +234,8 @@
       <workItem from="1703594513596" duration="6044000" />
       <workItem from="1703609346866" duration="4931000" />
       <workItem from="1703676023991" duration="3087000" />
-      <workItem from="1703679666521" duration="7533000" />
+      <workItem from="1703679666521" duration="8180000" />
+      <workItem from="1703697926862" duration="9015000" />
     </task>
     <servers />
   </component>

@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Http\Requests\ArticleCreateRequest;
+use App\Models\Article;
 use App\Repositories\ArticleRepository;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,8 +14,10 @@ class ArticleService
 
     }
 
-    function create(ArticleCreateRequest $request)
+    function create(ArticleCreateRequest $request): Article
     {
-        $this->repository->create($request->title, $request->context, Auth::user());
+       return $this->repository->create($request->title, $request->content, Auth::user());
     }
+
+
 }
