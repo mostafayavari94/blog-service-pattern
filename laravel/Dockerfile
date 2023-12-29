@@ -39,13 +39,16 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 
 ARG MOUNT_PATH
 
-COPY . /var/www/app
+COPY ./laravel /var/www/app
 # Set working directory
 WORKDIR /var/www/app
 
 RUN composer install
+
+RUN php artisan breeze:install --no-interaction blade
+
 RUN npm install
-RUN run dev
+#RUN npm run dev
 
 RUN php artisan key:generate
 
