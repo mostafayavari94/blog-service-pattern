@@ -23,6 +23,15 @@ RUN apt-get install -y php-xml
 RUN apt-get install -y php-sqlite3
 RUN apt-get install -y php8.1-xdebug
 
+
+# Install Node.js and npm from NodeSource distribution
+RUN apt-get install -y curl
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+RUN apt-get install -y nodejs
+
+# Install the latest version of npm
+RUN npm install -g npm
+
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -35,6 +44,9 @@ COPY . /var/www/app
 WORKDIR /var/www/app
 
 RUN composer install
+RUN npm install
+RUN run dev
+
 RUN php artisan key:generate
 
 
