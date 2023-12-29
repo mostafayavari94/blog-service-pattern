@@ -2,64 +2,79 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
-use Illuminate\Http\Request;
+use App\DataTransferObjects\ArticleDTO;
+use App\Requests\ArticleRequest;
+use App\Services\ArticleService;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+
+    public function index(ArticleService $service)
     {
-        //
+        $data = [
+            'articles' => $service->getAll(),
+        ];
+        return view('article.index', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('article.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(ArticleRequest $request, ArticleService $service)
     {
-        //
+        $service->create(ArticleDTO::createFromRequest($request));
+        return redirect(route('article.index'))->with('message', __('Article created successfully.'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Article $article)
+
+    public function edit(int $id, ArticleService $service)
     {
-        //
+        $article = $service->getById($id);
+        $data = [
+            'article' => $article
+        ];
+        return view('article.edit', compact('data'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Article $article)
+    public function update(int $id, ArticleRequest $request, ArticleService $service)
     {
-        //
+        $service->update($id, ArticleDTO::createFromRequest($request));
+        return redirect(route('article.index'))->with('message', __('Article updated successfully.'));
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Article $article)
+    public function destroy(int $id, ArticleService $service)
     {
-        //
+        if (Auth::user()->hasRole('admin')) {
+            $service->delete($id);
+            return redirect(route('article.index'))->with('message', __('Article deleted successfully.'));
+        } else {
+            return redirect(route('article.index'))->with('message', __('access denied'));
+        }
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Article $article)
+    function publish(int $id, ArticleService $service)
     {
-        //
+
+        if (Auth::user()->hasRole('admin')) {
+            $service->publish($id);
+            return redirect(route('article.index'))->with('message', __('Article published successfully.'));
+        } else {
+            return redirect(route('article.index'))->with('message', __('access denied'));
+        }
+    }
+
+    function draft(int $id, ArticleService $service)
+    {
+        if (Auth::user()->hasRole('admin')) {
+            $service->draft($id);
+            return redirect(route('article.index'))->with('message', __('Article drafted successfully.'));
+        } else {
+            return redirect(route('article.index'))->with('message', __('access denied'));
+        }
     }
 }

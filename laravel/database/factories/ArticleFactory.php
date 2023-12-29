@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\ArticleStatus;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -20,7 +21,7 @@ class ArticleFactory extends Factory
         return [
             'title' => fake()->name,
             'content' => fake()->realText,
-            'publication_status' => false,
+            'publication_status' => ArticleStatus::Draft,
             'author_id' => User::factory()->create()->id,
         ];
     }

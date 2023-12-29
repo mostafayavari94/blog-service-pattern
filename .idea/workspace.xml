@@ -5,15 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f8e9f30-dcfc-4d51-8756-23a1e9ab83b2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/ArticleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/tests/Feature/ArticleRequestsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laravel/app/DataTransferObjects/ArticleDTO.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laravel/app/Enums/ArticleStatus.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laravel/app/Requests/ArticleRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laravel/tests/Feature/ArticleRequestTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Requests/ArticleCreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Requests/ArticleCreateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Requests/ArticleCreateRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Models/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Providers/AppServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/app/Repositories/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Repositories/ArticleRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/app/Services/ArticleService.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Services/ArticleService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/database/factories/ArticleFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/database/factories/ArticleFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/database/migrations/2023_12_26_145713_create_articles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/database/migrations/2023_12_26_145713_create_articles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/ArticleRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Feature/ArticleRepositoryTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/ArticleRequestsTest.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/ArticleServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Feature/ArticleServiceTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/tests/Unit/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Unit/ExampleTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,6 +182,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -175,6 +190,14 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ASUS\Documents\A.F.B" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Documents\A.F.B" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="[             'title' =&gt; $title,             'content' =&gt; $content,         ]" />
+    </option>
   </component>
   <component name="RunManager" selected="PHPUnit.ArticleRepository">
     <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
@@ -235,7 +258,11 @@
       <workItem from="1703609346866" duration="4931000" />
       <workItem from="1703676023991" duration="3087000" />
       <workItem from="1703679666521" duration="8180000" />
-      <workItem from="1703697926862" duration="9015000" />
+      <workItem from="1703697926862" duration="9109000" />
+      <workItem from="1703750628950" duration="8887000" />
+      <workItem from="1703771576429" duration="19362000" />
+      <workItem from="1703858525985" duration="524000" />
+      <workItem from="1703859088947" duration="9015000" />
     </task>
     <servers />
   </component>

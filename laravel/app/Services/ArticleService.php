@@ -2,9 +2,10 @@
 
 namespace App\Services;
 
-use App\Http\Requests\ArticleCreateRequest;
+use App\DataTransferObjects\ArticleDTO;
 use App\Models\Article;
 use App\Repositories\ArticleRepository;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 
 class ArticleService
@@ -14,9 +15,40 @@ class ArticleService
 
     }
 
-    function create(ArticleCreateRequest $request): Article
+    public function create(ArticleDTO $dto): Article
     {
-       return $this->repository->create($request->title, $request->content, Auth::user());
+        return $this->repository->create($dto->title, $dto->content, Auth::user());
+    }
+
+    public function getAll(): Collection
+    {
+        return $this->repository->getAll();
+    }
+
+    function update(int $id, ArticleDTO $dto): Article
+    {
+        return $this->repository->update($this->getById($id), $dto->title, $dto->content);
+    }
+
+    public function getById(int $id): Article
+    {
+        return $this->repository->getById($id);
+    }
+
+    public function delete(int $id): void
+    {
+        $this->repository->delete($id);
+    }
+
+    public function draft(int $id): Article
+    {
+        return $this->repository->draft($id);
+    }
+
+    function publish(int $id): Article
+    {
+        return $this->repository->publish($id);
+
     }
 
 

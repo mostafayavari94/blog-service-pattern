@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title',100);
             $table->text('content');
-            $table->boolean('publication_status')->default(false);
-            $table->unsignedBigInteger('author_id');
+            $table->integer('publication_status')->default(\App\Enums\ArticleStatus::Draft);
+            $table->dateTime('publication_date')->nullable();
+            $table->unsignedBigInteger('author_id')->nullable();
             $table->foreign('author_id')->references('id')->on('users');
             $table->timestamps();
         });
