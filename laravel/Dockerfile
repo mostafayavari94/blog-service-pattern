@@ -43,16 +43,11 @@ COPY ./laravel /var/www/app
 # Set working directory
 WORKDIR /var/www/app
 
-RUN composer install
-
-RUN php artisan breeze:install --no-interaction blade
-
-RUN npm install
 #RUN npm run dev
-
-RUN php artisan key:generate
-
-
-CMD echo "xdebug.mode=develop,debug,coverage" >> /etc/php/8.1/cli/php.ini;\
+CMD composer install;\
+    php artisan breeze:install --no-interaction blade;\
+    npm install;\
+    php artisan key:generate;\
+    echo "xdebug.mode=develop,debug,coverage" >> /etc/php/8.1/cli/php.ini;\
     php artisan migrate ;\
     php artisan serve --host=0.0.0.0
